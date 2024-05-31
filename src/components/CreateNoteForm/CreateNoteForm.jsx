@@ -1,3 +1,5 @@
+import '../../assets/css/style.css'
+
 export const CreateNoteForm = ({ handleCreateSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -11,35 +13,41 @@ export const CreateNoteForm = ({ handleCreateSubmit }) => {
     handleCreateSubmit(newNoteValue);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Name:</label>
-        <input type="text" name="name" required />
+
+    <form onSubmit={handleSubmit} className="note-form">
+  <div className="form-group">
+    <label htmlFor="name">Name:</label>
+    <input type="text" name="name" id="name" className="form-control" required />
+  </div>
+  <div>
+    <div className="form-group">
+      <label htmlFor="description">Description:</label>
+      <textarea name="description" id="description" className="form-control" required />
+    </div>
+    <div className='last3Options'>
+      <div className="form-group">
+    <label htmlFor="status">Status:</label>
+    <select name="status" id="status" className="form-control" required>
+      <option value="">Select an option</option>
+      <option value="pending">Pending</option>
+      <option value="in-progress">In progress</option>
+      <option value="completed">Completed</option>
+    </select>
       </div>
-      <div>
-        <label>Description:</label>
-        <textarea name="description" required />
+      <div className="form-group">
+    <label>
+      <input type="checkbox" name="important" className="checkbox-input" />
+      Important
+    </label>
       </div>
-      <div>
-        <label>Status:</label>
-        <select name="status" required>
-          <option value="">Select an option</option>
-          <option value="pending">Pending</option>
-          <option value="in-progress">In progress</option>
-          <option value="completed">Completed</option>
-        </select>
+      <div className="form-group">
+    <label htmlFor="dueDate">Due date:</label>
+    <input type="date" name="dueDate" id="dueDate" className="form-control" required />
       </div>
-      <div>
-        <label>
-          <input type="checkbox" name="important" />
-          Important
-        </label>
-      </div>
-      <div>
-        <label>Due data:</label>
-        <input type="date" name="dueDate" required />
-      </div>
-      <button type="submit">Add</button>
-    </form>
+    </div>
+  </div>
+  
+  <button type="submit" className="btn-submit">Add</button>
+</form>
   );
 };

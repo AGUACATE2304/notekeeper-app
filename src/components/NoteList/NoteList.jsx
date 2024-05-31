@@ -3,6 +3,8 @@ import { CreateNoteForm } from "../CreateNoteForm/CreateNoteForm";
 import { Note } from "../Note/Note";
 import { UpdateNoteForm } from "../UpdateNoteForm/UpdateNoteForm";
 import Card from "antd/es/card/Card";
+
+
 export const NoteList = ({
   loading,
   notes,
