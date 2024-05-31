@@ -5,13 +5,13 @@ export const Note = ({ note, setCurrentNote, handlerDeleteNote }) => {
   return (
     <Card className="note">
       <h2>{note.name}</h2>
-      <p>Descripción: {note.description}</p>
-      <p>Importante: {note.important ? "Sí" : "No"}</p>
-      <p>Estado: {note.status}</p>
-      <p>Fecha de vencimiento: {note.dueDate}</p>
+      <p>Description: {note.description}</p>
+      <p>Important: {note.important ? "Sí" : "No"}</p>
+      <p>State: {note.status}</p>
+      <p>Due Date: {note.dueDate}</p>
       <div className="note-buttons">
-        <button className="update-btn" onClick={() => setCurrentNote(note)}>Actualizar</button>
-        <button className="delete-btn" onClick={() => handlerDeleteNote(note.id)}>Eliminar</button>
+        <button className="update-btn" onClick={() => setCurrentNote(note)}>Actualize</button>
+        <button className="delete-btn" onClick={() => handlerDeleteNote(note.id)}>Delete</button>
       </div>
     </Card>
   );
