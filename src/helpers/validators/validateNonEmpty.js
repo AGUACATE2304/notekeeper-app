@@ -1,13 +1,4 @@
-function validateNonEmpty(note) {
-  if (
-    !note.name ||
-    !note.description ||
-    note.name.trim() === "" || // .trim ( delete all space betwheen words)
-    note.description.trim() === ""
-  ) {
-    return false;
-  }
-  return true;
+export const validateNonEmpty = (value) => {
+  return value.trim() !== "";
 }
 
-module.export = validateNonEmpty;

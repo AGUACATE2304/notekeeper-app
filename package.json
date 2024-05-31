@@ -8,7 +8,6 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "test:watch": "jest --watch",
     "lint": "npx prettier  --check .",
     "lint:fix": "npx prettier  --write ."
   },

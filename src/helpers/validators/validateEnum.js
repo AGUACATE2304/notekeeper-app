@@ -1,10 +1,7 @@
-function validateEnum(note) {
-  const allowedStatusValues = ["pending", "in-progress", "completed"];
+export const validateEnum = (value, enumArray) => {
 
-  if ("status" in note && !allowedStatusValues.includes(note.status)) {
-    return false;
-  }
-  return true;
+    return enumArray.includes(value);
+
 }
 
-module.exports = validateEnum;
+

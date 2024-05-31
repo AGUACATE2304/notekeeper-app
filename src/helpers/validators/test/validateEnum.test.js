@@ -1,63 +1,15 @@
 import { expect, test } from "vitest";
+import {validateEnum} from "../validateEnum";
+test("validateEnum should return true if the given value is included in the given enum", () => {
+  const value = 1;
+  const enumArray = [1, 2, 3];
+    expect(validateEnum(value, enumArray)).toBe(true);
+});
 
-import validateEnum from "../validateEnum.js";
-
-test("validateEnum", () => {
-  if (
-    ('should return true when note status is "pending"',
-    () => {
-      const note = { status: "pending" };
-      expect(validateEnum(note)).toBe(true);
-    })
-  );
-
-  if (
-    ('should return true when note status is "in-progress"',
-    () => {
-      const note = { status: "in-progress" };
-      expect(validateEnum(note)).toBe(true);
-    })
-  );
-
-  if (
-    ('should return true when note status is "completed"',
-    () => {
-      const note = { status: "completed" };
-      expect(validateEnum(note)).toBe(true);
-    })
-  );
-
-  if (
-    ('should return false when note status is not "pendig"',
-    () => {
-      const note = { status: !"pending" };
-      expect(validateEnum(note)).toBe(false);
-    })
-  );
-
-  if (
-    ('should return false when note status is not "in-progress"',
-    () => {
-      const note = { status: !"in-progress" };
-      expect(validateEnum(note)).toBe(false);
-    })
-  );
-
-  if (
-    ('should return false when note status is not "completed"',
-    () => {
-      const note = { status: !"completed" };
-      expect(validateEnum(note)).toBe(false);
-    })
-  );
-
-  if (
-    ("should return false when note status is not provided",
-    () => {
-      const note = {};
-      expect(validateEnum(note)).toBe(false);
-    })
-  );
+test("validateEnum should return false if the given value is not included in the given enum", () => {
+  const value = 6;
+  const enumArray = [1, 2, 3];
+    expect(validateEnum(value, enumArray)).toBe(false);
 });
 
 export default test;
