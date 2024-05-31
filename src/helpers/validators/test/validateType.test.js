@@ -14,5 +14,3 @@ test("validateType should return false if the given value isn't equal to the giv
 
   expect(validateType(type, value)).toBe(false);
 });
-
-
