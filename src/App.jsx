@@ -2,19 +2,23 @@ import { useNotes } from "./hooks/useNotes";
 import { NoteList } from "./components/NoteList/NoteList";
 
 function App() {
-
   const {
     notes,
     loading,
     handleCreateNotes,
     handleUpdateNotes,
-    handleDeleteNotes
+    handleDeleteNotes,
   } = useNotes();
-
 
   return (
     <>
-      <NoteList notes={notes} loading={loading} handleAddNewNote={handleCreateNotes} handleUpdateNote={handleUpdateNotes} handleDeleteNote={handleDeleteNotes} />
+      <NoteList
+        notes={notes}
+        loading={loading}
+        handleAddNewNote={handleCreateNotes}
+        handleUpdateNote={handleUpdateNotes}
+        handleDeleteNote={handleDeleteNotes}
+      />
     </>
   );
 }
