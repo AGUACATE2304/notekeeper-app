@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CreateNoteForm } from "../CreateNoteForm/CreateNoteForm";
 import { Note } from "../Note/Note";
 import { UpdateNoteForm } from "../UpdateNoteForm/UpdateNoteForm";
-
+import Card from "antd/es/card/Card";
 export const NoteList = ({
   loading,
   notes,
@@ -50,21 +50,26 @@ export const NoteList = ({
           handleUpdateSubmit={handlerUpdateNote}
         />
       )}
-
-      <ul>
+      <Card>
+      <div className="noteLista">
         {loading ? (
-          <li>charging notes...</li>
+          <p>charging notes...</p>
         ) : (
           notes.map((note) => (
-            <Note
-              setCurrentNote={setCurrentNote}
-              key={note.id}
-              note={note}
-              handlerDeleteNote={handlerDeleteNote}
-            />
+            <div>
+              <Note
+                setCurrentNote={setCurrentNote}
+                key={note.id}
+                note={note}
+                handlerDeleteNote={handlerDeleteNote}
+              ></Note>
+            </div>
+            
           ))
         )}
-      </ul>
+      </div>
+      </Card>
+      
     </>
   );
 };
